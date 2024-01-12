@@ -1,0 +1,20 @@
+---
+const { title, desc, badge, tag, tag_url } = Astro.props;
+---
+
+<div
+  class="rounded-lg bg-base-100 hover:shadow-xl transition ease-in-out hover:scale-[102%]"
+>
+  <div class="hero-content flex-col md:flex-row">
+    <div class="grow w-full">
+      <h1 class="text-xl font-bold">
+        {title}
+        {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
+      </h1>
+      <p class="py-1 text-1xl">{desc}</p>
+      <div class="card-actions justify-end">
+        {tag && tag_url && <a href={tag_url} target="_blank" class="badge badge-outline">{tag}</a>}
+      </div>
+    </div>
+  </div>
+</div>

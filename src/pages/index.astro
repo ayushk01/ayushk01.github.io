@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HorizontalCard from "../components/HorizontalCard.astro";
+import ExperienceCard from "@components/ExperienceCard.astro";
+---
+
+<BaseLayout sideBarActiveItemID="home">
+  <div class="pb-12 mt-5">
+    <div class="text-xl py-1">Hey there 👋</div>
+    <div class="text-5xl font-bold">I'm Ayush Kashyap</div>
+    <div class="text-3xl py-3 font-bold">Software Engineer</div>
+    <div class="py-2">
+      <text class="text-lg">
+        From cross-platform Flutter apps📱 to dynamic Next.js websites💻, from the simplicity of Python🐍 to the speed🚆 of C++, from basic ML algorithms to scalable cloud platform tools, I worked with multiple technologies, frameworks, programming languages and software domains. With a commitment to innovation🚀, I embrace multiple solutions and stay at the forefront of trends in the software world🌎 to solve real world problems.
+      </text>
+    </div>
+    <div class="mt-8">
+      <a class="btn" href="https://linkedin.com/in/ayushhhkk" target="_blank"> Let's connect!</a>
+    </div>
+  </div>
+
+  <div>
+    <div class="text-3xl w-full font-bold mb-2">My Recent Experience 👨‍💻</div>
+  </div>
+
+  <ExperienceCard
+    title="Docplix Solutions Pvt. Ltd."
+    desc="Managed Cross Platform Apps, Cloud Infastructure, SQL DBs, REST APIs."
+    badge="NEW"
+    tag="Awards & Recognition 🏅"
+    tag_url="https://www.linkedin.com/posts/ayushk01_docplix-medstartup-developerlife-activity-7046548010498940928-XQVk"
+  />
+  <div class="divider my-0"></div>
+  <ExperienceCard
+    title="Augur IT Consultings Pvt. Ltd."
+    desc="Managed Non-SQL & SQL DBs, Node.js APIs, Cross Platform Web/Mobile Apps."
+  />
+  <div class="divider my-0"></div>
+  <ExperienceCard
+    title="Student Mentor (Google Developer Students Club)"
+    desc="Organised 10+ workshops and events attended by 100+ students. Maintained a community of 900+ CSE Students Online."
+  />
+</BaseLayout>

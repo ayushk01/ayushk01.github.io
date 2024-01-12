@@ -1,0 +1,153 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import TimeLineElement from "../components/cv/TimeLine.astro";
+---
+
+<BaseLayout title="Resume" sideBarActiveItemID="cv">
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Ayush Kashyap</div>
+  </div>
+
+  <div class="mb-10 text-justify">
+    Experienced software developer with proficiency in multiple programming
+    languages and frameworks. Proven track record of delivering high-quality,
+    scalable solutions in both individual and collaborative settings. Adept at
+    problem-solving and staying abreast of industry trends to ensure innovative
+    and efficient software development.
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Education</div>
+  </div>
+
+  <div class="time-line-container grid gap-4 mb-10">
+    <TimeLineElement
+      title="Graphic Era University"
+      subtitle="August 2019 to July 2023 at Graphic Era University, Dehradun, India"
+    />
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Experience</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Docplix Solutions Pvt. Ltd."
+      subtitle="From Apri 2022 as SDE-I"
+    >
+      • Building a full fledged EHR/EMR System for Doctors.<br />
+      • Worked on React JS, Node JS, Typescript, Relational Databases, ORMs, REST
+      APIs etc.<br />
+      • Managed Cloud Infastructure, Cross Platform Applications used by multiple
+      users around India
+    </TimeLineElement>
+    <TimeLineElement
+      title="Augur IT Consulting Pvt. Ltd."
+      subtitle="From Aug 2021 to Feb 2022 as Full Stack Intern"
+    >
+      • Worked on 3+ enterprise level projects.<br />
+      • A system for managing B2B data through mobile app and same on Web App.<br
+      />
+      • Worked on SQL/Non-SQL Databases, React Native Apps, Role based Authentication
+      System etc.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Dehra Productions"
+      subtitle="From Dec 2020 to Feb 2021 as Web Dev Intern"
+    >
+      • Completed the deployment of 5+ websites used by small businesses.<br />
+      • Deployed a React JS website with Apollo Graphql Client for an event organizing
+      committe.
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Position of Responsibility</div>
+  </div>
+
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Student Mentor, Web/App (Google Developer Students Club)"
+      subtitle="Aug 2021 – Aug 2022"
+    >
+      • Organised 1 android workshop and 3+ tech events attended by 100+
+      students until now.<br />
+      • Maintained a community of 900+ interested students working on different projects
+      in software.
+    </TimeLineElement>
+    <TimeLineElement
+      title="Technical Lead, Cross Platform Applications"
+      subtitle="Aug 2020 – Aug 2021"
+    >
+      • Organised 10+ workshops and events attended by 100+ students.<br />
+      • Created and maintained a community of 400+ interested computer science students.
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Skills</div>
+  </div>
+
+  <b>Languages:</b>
+  <ul class="list-disc md:columns-3 columns-2 mx-6 mb-3">
+    <li>C</li>
+    <li>C++</li>
+    <li>Python</li>
+    <li>Javascript</li>
+    <li>Typescript</li>
+    <li>Dart</li>
+  </ul>
+
+  <b>Web Technologies:</b>
+  <ul class="list-disc md:columns-3 columns-2 mx-6 mb-3">
+    <li>Next</li>
+    <li>React</li>
+    <li>Astro</li>
+    <li>Express</li>
+    <li>Node</li>
+  </ul>
+
+  <b>Mobile App:</b>
+  <ul class="list-disc md:columns-3 columns-2 mx-6 mb-3">
+    <li>Flutter</li>
+    <li>React Native</li>
+  </ul>
+
+  <b>ML/Automation</b>
+  <ul class="list-disc md:columns-3 columns-2 mx-6 mb-3">
+    <li>OpenCV</li>
+    <li>Pandas</li>
+    <li>Numpy</li>
+    <li>Keras</li>
+    <li>Matplotlib</li>
+    <li>Tensorflow</li>
+    <li>Selenium</li>
+  </ul>
+
+  <b>Databases</b>
+  <ul class="list-disc md:columns-3 columns-2 mx-6 mb-3">
+    <li>MongoDB</li>
+    <li>PostgreSQL</li>
+    <li>MySQL</li>
+    <li>Firebase</li>
+    <li>Sequelize</li>
+    <li>Prisma</li>
+  </ul>
+
+  <b>Databases</b>
+  <ul class="list-disc md:columns-3 columns-2 mx-6 mb-3">
+    <li>Docker</li>
+    <li>Kubernetes</li>
+    <li>AWS</li>
+  </ul>
+
+  <b>Developer Tools</b>
+  <ul class="list-disc md:columns-3 columns-2 mx-6 mb-3">
+    <li>Git</li>
+    <li>Github</li>
+    <li>Vim</li>
+    <li>Bash</li>
+    <li>Linux</li>
+  </ul>
+</BaseLayout>
