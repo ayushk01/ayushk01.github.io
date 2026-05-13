@@ -1,0 +1,44 @@
+---
+title: "DocPlix EHR — multi-tenant frontend"
+blurb: "Built the EHR frontend from scratch and grew it into a multi-tenant platform serving several clinic chains off one codebase."
+stack:
+  - React
+  - TypeScript
+  - Node.js
+  - Multi-tenant
+  - AWS
+---
+
+## The product
+
+DocPlix is a healthtech company that builds an EHR platform used by clinics in India. The clinician-facing surface is the web app, plus a pair of React Native mobile apps for patients and clinicians (see the [mobile case study](/work/docplix-mobile/)).
+
+I joined DocPlix as an intern in April 2022 and converted to full-time the following April. Since then, I've been the engineer on the frontend platform.
+
+## Built from scratch
+
+When I joined, the frontend was a small prototype. I rebuilt it from zero — the repo, the build tooling, the routing, the auth flow, the design system, the state management — into something the team could ship every two weeks.
+
+What I owned along the way:
+
+- **Architecture and tooling.** Decisions about the framework, build system, testing approach, and folder structure that the team still uses today.
+- **Auth and access control.** Login, session refresh, role gates, audit trails — the bits clinicians don't notice when they work but immediately notice when they don't.
+- **Design system.** The component library, tokens, and theming primitives that the entire app is built from.
+- **State and data layer.** React Query for server state, a small Redux slice for cross-page UI state, a typed REST client generated from the API spec.
+
+## Multi-tenant platform
+
+The biggest piece of engineering work has been turning the single-tenant app into a real multi-tenant platform. Today the same codebase powers the flagship DocPlix EHR and several clinic-branded deployments for other chains — each gets its own branding, configured feature set, and isolated data, all served from one build and one deploy pipeline.
+
+That's the magic of getting the multi-tenant model right: marginal cost of onboarding a new clinic chain drops from "months of bespoke work" to "fill in a config and flip a flag."
+
+## Team lead
+
+As the team grew, I onboarded new engineers — code reviews, pairing on first features, conventions for testing and PR descriptions. The team's frontend bar is something I helped set.
+
+## Stack
+
+- **Frontend:** TypeScript, React, React Query, Redux Toolkit (small slice), Tailwind-ish utility CSS, Radix primitives.
+- **Backend (the parts I touch):** Node.js + Express; Flask for the ML-flavored endpoints.
+- **Data:** PostgreSQL for the relational core; DynamoDB for a few high-write surfaces; Redis for caching.
+- **Infra:** AWS — EC2 / ECS / Lambda / Fargate for compute; S3 / RDS / DynamoDB / CloudFront for storage and edge.

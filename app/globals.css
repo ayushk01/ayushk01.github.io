@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: 17 17 17;            /* near-black text */
+  --ink-muted: 100 100 100;
+  --paper: 252 252 252;       /* off-white background */
+  --paper-raised: 245 245 245;
+  --accent: 30 64 175;        /* blue-800 */
+}
+
+.dark {
+  --ink: 240 240 240;
+  --ink-muted: 156 163 175;
+  --paper: 10 10 10;
+  --paper-raised: 24 24 27;
+  --accent: 96 165 250;       /* blue-400 */
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: rgb(var(--paper));
+  color: rgb(var(--ink));
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: rgb(var(--accent) / 0.2);
+}
+
+/* Prose tweaks for MDX content */
+.prose-page {
+  max-width: 68ch;
+  line-height: 1.7;
+}
+.prose-page h2 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.prose-page p {
+  margin-bottom: 1.2rem;
+}
+.prose-page a {
+  color: rgb(var(--accent));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-page code {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 0.9em;
+  background: rgb(var(--paper-raised));
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+.prose-page pre {
+  background: rgb(var(--paper-raised));
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-size: 0.9rem;
+}

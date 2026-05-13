@@ -1,0 +1,43 @@
+---
+title: "DocPlix mobile — patient + clinician apps"
+blurb: "Two React Native apps, live on the App Store and Play Store. Offline support, push notifications, and a release process I helped build."
+stack:
+  - React Native
+  - TypeScript
+  - Hermes
+  - Push notifications
+  - App Store
+  - Play Store
+---
+
+## The product
+
+DocPlix ships two mobile apps:
+
+- **Patient app** — for patients to book appointments, see prescriptions, and message their clinic. [App Store · APP_STORE_URL_PATIENT] · [Play Store · PLAY_STORE_URL_PATIENT]
+- **Clinician app** — for clinicians on the go: view today's appointments, check patient history, write quick notes. [App Store · APP_STORE_URL_CLINICIAN] · [Play Store · PLAY_STORE_URL_CLINICIAN]
+
+Both are built in React Native, sharing the bulk of the codebase with our web app's data layer and types.
+
+## What I've owned
+
+- **MOBILE_FEATURE_1** — replace with one specific feature you owned end-to-end on the mobile side.
+- **MOBILE_FEATURE_2** — same.
+- **MOBILE_FEATURE_3** — same.
+
+A typical release cadence: 2-week sprints, weekly TestFlight / internal Android builds, biweekly production releases.
+
+## A few hard things
+
+_Pick a couple of real things and write 2–4 paragraphs each. Examples of the kind of detail recruiters at FAANG actually care about:_
+
+- _A specific bug you fixed (Hermes bytecode cache, native module memory leak, deep-linking flakiness, etc.) — what symptom, what you tried, what worked, what you'd do differently._
+- _An architecture decision (offline strategy, navigation library, state management) — what tradeoffs, what won, why._
+- _A perf win — "we cut cold-start by Xs by switching from Y to Z" or "we cut bundle size by W by Z."_
+
+## Tech notes
+
+- **Stack:** React Native, TypeScript, React Navigation, Reanimated, Zustand for local state, React Query for remote.
+- **Hermes** as the JS engine on both platforms.
+- **Push:** APNs + FCM via a single backend service.
+- **Release engineering:** GitHub Actions for builds; Fastlane for signing and store uploads.
