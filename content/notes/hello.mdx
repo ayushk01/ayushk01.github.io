@@ -1,11 +1,15 @@
 ---
-title: "Hello world (sample note)"
-blurb: "Sample note to verify the /notes route works. Replace with a real note."
-date: "2026-05-13"
+title: "Why I keep coming back to React Query"
+blurb: "It's not the caching. It's the way it makes the absence of a cache visible."
+date: "2026-05-02"
 ---
 
-This is a placeholder note. Replace this MDX file (or add new files alongside it in
-`content/notes/*.mdx`) with real short-form writing.
+I've used React Query, SWR, RTK Query, and a handful of bespoke fetch wrappers. I keep coming back to React Query and I think I finally know why.
 
-A good first note is something you would happily post on X — a specific debugging
-story, a perf win, or a one-paragraph opinion about a piece of your stack.
+It's not the caching. The caching is fine. Plenty of libraries cache.
+
+What React Query does that nothing else I've used does as cleanly is **make the four states of a request — fresh, stale, loading, error — first-class.** Every screen I've ever built has all four. The bug-prone code is the code that pretends one of them doesn't exist. ("Oh, we don't worry about stale data here." Three months later: a UI that shows you yesterday's appointment list because the cache invalidation rule had a typo.)
+
+React Query forces you to name the four states by default. That's the whole feature. The fact that the cache exists is a happy side effect.
+
+The corollary: if I'm reaching for `useEffect(() => { fetch(...) })` on a project, I'm almost always making a mistake. Not because `useEffect` is bad. Because the four states aren't visible at the call site.

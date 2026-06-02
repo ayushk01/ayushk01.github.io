@@ -1,0 +1,19 @@
+---
+title: "Three things React Native taught me about being a generalist"
+blurb: "When the same person writes the API, the screen, and signs the build, the boundaries between specialties stop mattering."
+date: "2026-05-09"
+---
+
+Three years into building React Native apps that ship to two app stores, here's what the work has done to my engineering instincts.
+
+**1. The boring parts of release engineering are the parts that compound.**
+
+The first time we shipped a production RN release it took me a day and a half. By the tenth release it took fifteen minutes — not because we got faster at any one step, but because we'd written enough Fastlane glue that the steps weren't decisions anymore. Most "engineering productivity" wins look like this in retrospect: stop deciding the same things over and over.
+
+**2. The web/mobile boundary is a leaky abstraction, and that's fine.**
+
+I used to think the goal of a React + React Native shop was to share as much code as possible. I now think the goal is to share *the right* code. Types and data layer: yes, always. Components: almost never. Form validation: with caution. Navigation: separate worlds. Pretending the two platforms are the same is how you get a codebase that's slower to ship on both.
+
+**3. Generalists ship faster, specialists ship safer — and you need both, sometimes in the same week.**
+
+There's a quiet pressure in mid-size companies to pick a lane: become The Frontend Engineer, or The Backend Engineer, or The Mobile Engineer. The work I've enjoyed most was the work where I owned a feature across all three because the boundaries were the bottleneck. The work I've messed up most was the work where I should have called in someone who'd seen this kind of perf problem before. The skill, mostly, is knowing which day is which.
