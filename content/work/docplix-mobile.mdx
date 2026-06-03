@@ -19,11 +19,21 @@ DocPlix ships a family of mobile apps off a shared React Native codebase, all **
 
 They share the bulk of their data layer and types with the web app. The split happens at the navigation and feature-flag boundary, not at the API layer.
 
+<figure>
+  <img src="/diagrams/mobile-shared-layer.svg" alt="Web (React) and Mobile (React Native) each keep their own UI components but share a core of TypeScript types, a typed REST client, and the React Query data layer; the split is at the navigation and feature-flag boundary." />
+  <figcaption>Shared types and data layer across web and native — UI components stay separate.</figcaption>
+</figure>
+
 **Live listings:**
 
 - DocPlix for Patients — [App Store](https://apps.apple.com/in/app/docplix-for-patients/id1597641311) · [Google Play](https://play.google.com/store/apps/details?id=com.docplix.app)
 - DocPlix Rx for Doctors — [App Store](https://apps.apple.com/in/app/docplix-rx-for-doctors/id6471070702) · [Google Play](https://play.google.com/store/apps/details?id=com.docplix.gp)
 - DocPlix Rx for Dentists — [App Store](https://apps.apple.com/in/app/docplix-rx-for-dentists/id6449826622) · [Google Play](https://play.google.com/store/apps/details?id=com.rxdental.docplix)
+
+<figure>
+  <img src="/diagrams/mobile-wireframe.svg" alt="Illustrative mobile wireframe — header, search, a list of rows, and a bottom tab bar. Not a real screenshot." />
+  <figcaption>Illustrative wireframe — not a product screenshot.</figcaption>
+</figure>
 
 ## What I've owned
 
@@ -40,6 +50,11 @@ Across both apps:
 
 **Hermes bytecode cache.** A war story. One specific screen started crashing on Android after a routine dependency upgrade — no useful stack trace, no JS error, just a hard native crash on a screen that hadn't changed. Spent a few days chasing it before tracing the cause to Hermes' bytecode cache holding onto a stale module that no longer matched the new dependency's shape. The fix was small once we knew where to look; the lesson was bigger. When Android RN crashes are inexplicable and the JS stack is empty, check Hermes first.
 
+<figure>
+  <img src="/diagrams/mobile-hermes.svg" alt="Before and after the Hermes bytecode-cache crash: a stale cache after a dependency upgrade causes a native crash with an empty JS stack; rebuilding the cache makes bytecode match the JS and it runs clean." />
+  <figcaption>The Hermes bytecode-cache crash — stale cache vs. rebuilt cache.</figcaption>
+</figure>
+
 **Offline support, in the limited form we needed it.** Doctors lose signal in clinic basements. The right answer wasn't a full offline-first architecture (a multi-quarter rewrite) — it was caching the day's appointments and the patient list on app open, queueing writes locally, and surfacing a small "syncing" indicator. 80% of the value for 5% of the effort.
 
 **Release cadence.** Two-week sprints, weekly TestFlight + internal Android builds, biweekly production releases. The discipline that made this work wasn't the cadence — it was making the build process boring. Once `pnpm release` did everything from version-bumping to store upload, releases stopped being a thing anyone dreaded.
@@ -49,7 +64,7 @@ Across both apps:
 React Native apps get heavy fast. A few things that paid off:
 
 - **Bundle audit.** Pruned dead native modules left over from earlier experiments. The Android APK and iOS IPA both came down meaningfully.
-- **Screen-level lazy loading.** The clinician app has tabs that 90% of users never touch on a given day — they don't need to be in the initial JS bundle.
+- **Screen-level lazy loading.** The clinician app has tabs that most users never open on a given day — they don't need to be in the initial JS bundle.
 - **Reanimated on the hot paths.** The appointment-list scroll and patient-card transitions got worth-it perf wins from moving animations off the JS thread.
 
 ## Stack

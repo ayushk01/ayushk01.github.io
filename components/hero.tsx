@@ -24,16 +24,8 @@ export function Hero() {
       </p>
       <p className="mt-4 max-w-prose text-lg text-ink-muted">
         3+ years building and scaling a multi-tenant platform end to end (a
-        production EHR at{" "}
-        <a
-          href="https://docplix.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-ink underline underline-offset-4 decoration-ink/30 hover:decoration-ink"
-        >
-          DocPlix
-        </a>
-        ), so I know how to make software survive real users.
+        production EHR at DocPlix), so I know how to make software survive real
+        users.
       </p>
 
       <div className="mt-8 flex flex-wrap items-center gap-3">

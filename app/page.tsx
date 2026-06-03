@@ -58,9 +58,9 @@ export default function HomePage() {
             between five contractors.
           </p>
           <p>
-            I take on freelance SaaS builds and app-rescue work in my own time.
-            If you're starting a multi-tenant product, or you have a half-built
-            app that doesn't hold up yet, that's the kind of thing I'm good at.
+            I take on freelance SaaS builds and app-rescue work. If you're
+            starting a multi-tenant product, or you have a half-built app that
+            doesn't hold up yet, that's the kind of thing I'm good at.
           </p>
         </div>
       </section>

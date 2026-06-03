@@ -15,7 +15,12 @@ DocPlix is a healthtech company building an EHR platform used by clinics in Indi
 
 I joined as an intern in April 2022 and converted to full-time the following April. Since then I've been the engineer on the frontend platform.
 
-**Outcome.** What started as a single-tenant prototype now powers branded deployments for **dozens of clinic chains and thousands of clinicians off one codebase**, with the marginal cost of onboarding a new chain measured in days rather than months. My features have been part of the demos that closed fundraising rounds and onboarded the first paying clinics — and the platform work earned DocPlix's internal "WoW Machine" award (Jan 2023) for building scalable systems.
+**Outcome.** What started as a single-tenant prototype now powers branded deployments for **dozens of clinic chains and thousands of clinicians off one codebase**, with the marginal cost of onboarding a new chain measured in days rather than months. My work has shipped in the product demos that brought on the first paying clinics — and the platform work earned The WoW Machine Award, DocPlix's internal recognition for building scalable systems (Jan 2023).
+
+<figure>
+  <img src="/diagrams/ehr-wireframe.svg" alt="Illustrative wireframe of a clinician web dashboard — sidebar, header, summary cards, a chart, and a list. Not a real screenshot." />
+  <figcaption>Illustrative wireframe of the clinician dashboard — not a product screenshot.</figcaption>
+</figure>
 
 ## Built from scratch
 
@@ -33,6 +38,11 @@ What I owned along the way:
 The biggest piece of engineering work has been turning the single-tenant app into a real multi-tenant SaaS. The same codebase now powers the flagship DocPlix EHR and several clinic-branded deployments for other chains — each with its own branding, configured feature set, and isolated data, all served from one build pipeline.
 
 The point of getting the multi-tenant model right: the marginal cost of onboarding a new clinic chain drops from "months of bespoke work" to "fill in a config and flip a flag." That's the difference between an EHR startup that has to fork code for every customer and one that scales horizontally.
+
+<figure>
+  <img src="/diagrams/ehr-architecture.svg" alt="Multi-tenant architecture: one codebase resolved at request time through theming, auth scoping, and feature flags into branded per-tenant deployments over tenant-isolated data on AWS." />
+  <figcaption>One codebase → branded per-tenant deployments, resolved at request time, over isolated data on AWS.</figcaption>
+</figure>
 
 ## A few hard things
 

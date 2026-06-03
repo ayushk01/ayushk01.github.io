@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 432" role="img" aria-label="The Hermes bytecode-cache crash, before and after. Before: a dependency upgrade leaves Hermes' bytecode cache holding a stale module, so bytecode no longer matches the JS and the app hits a native crash with an empty JS stack. After: clearing and rebuilding the cache makes bytecode match the JS, the module loads, and it runs clean.">
+  <style>
+    svg{--bg:#ffffff;--fg:#111827;--muted:#6b7280;--line:#d4d4d8;--panel:rgba(0,0,0,.035);--panel2:rgba(0,0,0,.06);--danger:#b91c1c;--ok:#15803d;}
+    @media (prefers-color-scheme:dark){svg{--bg:#0c0c0d;--fg:#f0f0f0;--muted:#9ca3af;--line:#3f3f46;--panel:rgba(255,255,255,.05);--panel2:rgba(255,255,255,.09);--danger:#f87171;--ok:#4ade80;}}
+    text{font-family:ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;fill:var(--fg);}
+    .m{fill:var(--muted);} .b{font-weight:600;}
+    .panel{fill:var(--panel);stroke:var(--line);stroke-width:1.25;}
+    .box2{fill:var(--panel2);stroke:var(--line);stroke-width:1;}
+    .ln{stroke:var(--muted);stroke-width:1.4;fill:none;}
+    .lf{fill:var(--muted);}
+  </style>
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" class="lf"/>
+    </marker>
+  </defs>
+  <rect width="760" height="432" fill="var(--bg)"/>
+
+  <!-- LEFT: before -->
+  <rect class="panel" x="40" y="36" width="320" height="364" rx="12"/>
+  <rect x="56" y="52" width="92" height="26" rx="13" fill="var(--panel2)" stroke="var(--danger)" stroke-width="1.25"/>
+  <text class="b" x="102" y="70" text-anchor="middle" font-size="12" fill="var(--danger)">Before</text>
+
+  <rect class="box2" x="70" y="92" width="260" height="44" rx="8"/>
+  <text class="b" x="200" y="119" text-anchor="middle" font-size="12.5">Dependency upgrade</text>
+  <line class="ln" x1="200" y1="136" x2="200" y2="160" marker-end="url(#ar)"/>
+
+  <rect class="box2" x="70" y="160" width="260" height="50" rx="8"/>
+  <text class="b" x="200" y="183" text-anchor="middle" font-size="12.5">Hermes bytecode cache</text>
+  <text class="m" x="200" y="200" text-anchor="middle" font-size="10.5">holds a stale module</text>
+  <line class="ln" x1="200" y1="210" x2="200" y2="234" marker-end="url(#ar)"/>
+
+  <rect class="box2" x="70" y="234" width="260" height="44" rx="8"/>
+  <text class="b" x="200" y="261" text-anchor="middle" font-size="12.5">Bytecode ≠ current JS</text>
+  <line class="ln" x1="200" y1="278" x2="200" y2="302" marker-end="url(#ar)"/>
+
+  <rect x="70" y="302" width="260" height="60" rx="10" fill="var(--panel2)" stroke="var(--danger)" stroke-width="1.5"/>
+  <line x1="92" y1="326" x2="106" y2="340" stroke="var(--danger)" stroke-width="2.4" stroke-linecap="round"/>
+  <line x1="106" y1="326" x2="92" y2="340" stroke="var(--danger)" stroke-width="2.4" stroke-linecap="round"/>
+  <text class="b" x="210" y="328" text-anchor="middle" font-size="12.5">Native crash</text>
+  <text class="m" x="210" y="346" text-anchor="middle" font-size="10.5">empty JS stack</text>
+
+  <!-- RIGHT: after -->
+  <rect class="panel" x="400" y="36" width="320" height="364" rx="12"/>
+  <rect x="416" y="52" width="84" height="26" rx="13" fill="var(--panel2)" stroke="var(--ok)" stroke-width="1.25"/>
+  <text class="b" x="458" y="70" text-anchor="middle" font-size="12" fill="var(--ok)">After</text>
+
+  <rect class="box2" x="430" y="92" width="260" height="44" rx="8"/>
+  <text class="b" x="560" y="119" text-anchor="middle" font-size="12.5">Clear / rebuild cache</text>
+  <line class="ln" x1="560" y1="136" x2="560" y2="160" marker-end="url(#ar)"/>
+
+  <rect class="box2" x="430" y="160" width="260" height="50" rx="8"/>
+  <text class="b" x="560" y="183" text-anchor="middle" font-size="12.5">Bytecode matches JS</text>
+  <text class="m" x="560" y="200" text-anchor="middle" font-size="10.5">rebuilt from current source</text>
+  <line class="ln" x1="560" y1="210" x2="560" y2="234" marker-end="url(#ar)"/>
+
+  <rect class="box2" x="430" y="234" width="260" height="44" rx="8"/>
+  <text class="b" x="560" y="261" text-anchor="middle" font-size="12.5">Module loads correctly</text>
+  <line class="ln" x1="560" y1="278" x2="560" y2="302" marker-end="url(#ar)"/>
+
+  <rect x="430" y="302" width="260" height="60" rx="10" fill="var(--panel2)" stroke="var(--ok)" stroke-width="1.5"/>
+  <polyline points="450,330 458,338 472,322" fill="none" stroke="var(--ok)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <text class="b" x="566" y="328" text-anchor="middle" font-size="12.5">Runs clean</text>
+  <text class="m" x="566" y="346" text-anchor="middle" font-size="10.5">stable on Android</text>
+</svg>
