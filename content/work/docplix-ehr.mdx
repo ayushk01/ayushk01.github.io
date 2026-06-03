@@ -1,19 +1,21 @@
 ---
-title: "DocPlix EHR — multi-tenant frontend"
-blurb: "Built the EHR frontend from scratch and grew it into a multi-tenant platform serving several clinic chains off one codebase."
+title: "DocPlix EHR — multi-tenant SaaS frontend"
+blurb: "Built the EHR frontend from scratch and grew it into a multi-tenant SaaS platform serving dozens of clinic chains and thousands of clinicians from one codebase."
 stack:
   - React
   - TypeScript
-  - Node.js
   - Multi-tenant
+  - Node.js
   - AWS
 ---
 
 ## The product
 
-DocPlix is a healthtech company that builds an EHR platform used by clinics in India. The clinician-facing surface is the web app, plus a pair of React Native mobile apps for patients and clinicians (see the [mobile case study](/work/docplix-mobile/)).
+DocPlix is a healthtech company building an EHR platform used by clinics in India. The clinician-facing surface is the web app, plus a pair of React Native mobile apps for patients and clinicians (see the [mobile case study](/work/docplix-mobile/)).
 
-I joined DocPlix as an intern in April 2022 and converted to full-time the following April. Since then I've been the engineer on the frontend platform.
+I joined as an intern in April 2022 and converted to full-time the following April. Since then I've been the engineer on the frontend platform.
+
+**Outcome.** What started as a single-tenant prototype now powers branded deployments for **dozens of clinic chains and thousands of clinicians off one codebase**, with the marginal cost of onboarding a new chain measured in days rather than months. My features have been part of the demos that closed fundraising rounds and onboarded the first paying clinics — and the platform work earned DocPlix's internal "WoW Machine" award (Jan 2023) for building scalable systems.
 
 ## Built from scratch
 
@@ -22,35 +24,35 @@ When I joined, the frontend was a small prototype. Over the following months I r
 What I owned along the way:
 
 - **Architecture and tooling.** Framework choice, build setup, testing approach, folder structure. The decisions the team still uses today.
-- **Auth and access control.** Login, session refresh, role gates, audit trails — the bits clinicians don't notice when they work but immediately notice when they don't.
-- **Design system.** The component library, design tokens, and theming primitives that the entire app is built from.
+- **Auth and access control.** Login, session refresh, role gates, audit trails — the bits clinicians don't notice when they work and immediately notice when they don't.
+- **Design system.** The component library, design tokens, and theming primitives the entire app is built from.
 - **State and data layer.** React Query for server state, a small Redux slice for cross-page UI state, a typed REST client generated from the API spec.
 
 ## Multi-tenant platform
 
-The biggest piece of engineering work has been turning the single-tenant app into a real multi-tenant platform. The same codebase now powers the flagship DocPlix EHR and several clinic-branded deployments for other chains. Each gets its own branding, configured feature set, and isolated data, all served from one build pipeline.
+The biggest piece of engineering work has been turning the single-tenant app into a real multi-tenant SaaS. The same codebase now powers the flagship DocPlix EHR and several clinic-branded deployments for other chains — each with its own branding, configured feature set, and isolated data, all served from one build pipeline.
 
-The point of getting the multi-tenant model right: marginal cost of onboarding a new clinic chain drops from "months of bespoke work" to "fill in a config and flip a flag." That's the difference between an EHR startup that has to fork code for every customer and one that scales horizontally.
+The point of getting the multi-tenant model right: the marginal cost of onboarding a new clinic chain drops from "months of bespoke work" to "fill in a config and flip a flag." That's the difference between an EHR startup that has to fork code for every customer and one that scales horizontally.
 
 ## A few hard things
 
-**Theming.** Easy to get wrong on the first pass. We started with compile-time CSS tokens — one bundle per tenant — and rewrote it the moment we hit the third tenant and realized the build matrix was untenable. The version that stuck: CSS custom properties resolved at request time from tenant config, no per-tenant builds.
+**Theming.** Easy to get wrong on the first pass. We started with compile-time CSS tokens — one bundle per tenant — and rewrote it the moment we hit the third tenant and realized the build matrix was untenable. The version that stuck: CSS custom properties resolved at request time from tenant config, no per-tenant builds. Adding the next tenant became a config change instead of a release.
 
-**Auth boundaries.** Getting tenant scoping right is the kind of thing that's invisible when it works and catastrophic when it doesn't. We pushed the tenant context as high in the React tree as possible, made the typed REST client refuse to fire requests without a tenant in scope, and added a linting rule that catches the one shape of mistake that would have leaked.
+**Auth boundaries.** Getting tenant scoping right is the kind of thing that's invisible when it works and catastrophic when it doesn't. We pushed the tenant context as high in the React tree as possible, made the typed REST client refuse to fire requests without a tenant in scope, and added a linting rule that catches the one shape of mistake that would have leaked data across tenants.
 
-**Feature flags.** A per-tenant feature-flag layer on top of our config service so a clinic chain can opt into newer modules without affecting others. Sounds simple. It isn't — the gnarly part is letting non-flagged code paths assume features exist while flagged paths gate them gracefully, without scattering `if (flagged) {}` everywhere.
+**Feature flags.** A per-tenant feature-flag layer on top of our config service, so a clinic chain can opt into newer modules without affecting others. Sounds simple. It isn't — the gnarly part is letting non-flagged code paths assume features exist while flagged paths gate them gracefully, without scattering `if (flagged) {}` everywhere.
 
 ## Performance and stability
 
 The team is small, so performance and reliability work falls on whoever's around. I've spent a meaningful chunk of time on:
 
-- **Bundle size.** Code-splitting routes that aren't on the critical path. Re-evaluating dependencies (the chart library was an easy 30%-off win).
+- **Bundle size.** Code-splitting routes that aren't on the critical path. Re-evaluating dependencies (swapping out an oversized chart library was an easy double-digit-percent win).
 - **Render performance.** Profiling the slow patient-history screens and fixing the offenders — usually a render-loop pattern we'd let slide.
 - **Error reporting.** Wired up Sentry, set up source-map uploads, made errors actionable rather than noise.
 
 ## Team lead
 
-As the team grew, I onboarded new engineers — code reviews, pairing on first features, conventions for testing and PR descriptions. The team's frontend bar is something I helped set, and I'd argue the value of that compounds more than my individual commits do.
+As the team grew, I onboarded new engineers — code reviews, pairing on first features, conventions for testing and PR descriptions. The team's frontend bar is something I helped set, and the value of that compounds more than my individual commits do.
 
 ## Stack
 

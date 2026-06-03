@@ -14,12 +14,12 @@ Features:
 
 ```bash
 # from this directory
-pnpm install        # or: npm install
-pnpm dev            # http://localhost:3000
+npm install
+npm run dev         # http://localhost:3000
 
 # build & preview
-pnpm build          # produces ./out
-pnpm exec serve out # quick way to preview the static build
+npm run build       # produces ./out
+npx serve out       # quick way to preview the static build
 ```
 
 ## Deploy to ayushk01.github.io (the recommended path)

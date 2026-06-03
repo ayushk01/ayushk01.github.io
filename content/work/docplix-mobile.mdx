@@ -1,44 +1,56 @@
 ---
 title: "DocPlix mobile — patient + clinician apps"
-blurb: "Two React Native apps, live on the App Store and Play Store. Shared types and data layer with the web platform."
+blurb: "A family of React Native apps (patient + clinician), live on the App Store and Play Store. Shared types and data layer with the web platform. Owned navigation, networking, push, and release engineering end to end."
 stack:
   - React Native
   - TypeScript
   - Hermes
-  - Push notifications
-  - App Store
-  - Play Store
+  - iOS
+  - Android
+  - Fastlane
 ---
 
 ## The product
 
-DocPlix ships two mobile apps off a shared React Native codebase:
+DocPlix ships a family of mobile apps off a shared React Native codebase, all **live on the App Store and Google Play**:
 
 - **Patient app** — for patients to book appointments, see prescriptions, and message their clinic.
-- **Clinician app** — for clinicians on the go: today's appointments, quick patient history, brief notes between consults.
+- **Clinician apps** — for clinicians on the go: today's appointments, quick patient history, brief notes between consults. The clinician side ships as a general-practice build and a dentistry-specific build, both off the same core.
 
-Both share the bulk of their data layer and types with the web app. The split happens at the navigation and feature-flag boundary, not at the API layer.
+They share the bulk of their data layer and types with the web app. The split happens at the navigation and feature-flag boundary, not at the API layer.
 
-> App Store / Play Store links: _to be added — see the [playbook](/) for the URLs in flight._
+**Live listings:**
+
+- DocPlix for Patients — [App Store](https://apps.apple.com/in/app/docplix-for-patients/id1597641311) · [Google Play](https://play.google.com/store/apps/details?id=com.docplix.app)
+- DocPlix Rx for Doctors — [App Store](https://apps.apple.com/in/app/docplix-rx-for-doctors/id6471070702) · [Google Play](https://play.google.com/store/apps/details?id=com.docplix.gp)
+- DocPlix Rx for Dentists — [App Store](https://apps.apple.com/in/app/docplix-rx-for-dentists/id6449826622) · [Google Play](https://play.google.com/store/apps/details?id=com.rxdental.docplix)
 
 ## What I've owned
 
 Across both apps:
 
-- Navigation architecture (React Navigation + typed routes).
-- The networking layer — shared with web — including auth refresh, offline retry, and error surfacing.
-- Push notifications: APNs + FCM via a single backend service.
-- Release engineering: CI builds, code signing, TestFlight + internal Android tracks, production releases.
+- **Navigation architecture** — React Navigation with typed routes, deep-link handling, and a clean separation between patient and clinician flows.
+- **Networking layer** — shared with web, including auth refresh, offline retry, and error surfacing.
+- **Push notifications** — APNs + FCM through a single backend service so the apps don't care which platform they're on.
+- **Release engineering** — Fastlane signing, CI builds, TestFlight + Android internal tracks, biweekly production releases that anyone on the team can ship.
 
 ## A few hard things
 
 **Sharing code with the web app without becoming a monorepo monster.** The temptation with React + React Native is to share *all* the React. The right line, for us, was sharing the types and the data layer (React Query + the typed REST client) but *not* the components. UI primitives diverge too much between web and native to share cleanly. Pretending otherwise meant `<View as="div">` ergonomics that nobody actually liked.
 
-**Hermes bytecode cache.** Spent a few days on a bug where one specific screen would crash on Android with no useful stack trace. Turned out to be Hermes' bytecode cache holding onto a stale module after a dependency upgrade. The lesson — when Android RN crashes are inexplicable and the JS stack is empty, check Hermes first.
+**Hermes bytecode cache.** A war story. One specific screen started crashing on Android after a routine dependency upgrade — no useful stack trace, no JS error, just a hard native crash on a screen that hadn't changed. Spent a few days chasing it before tracing the cause to Hermes' bytecode cache holding onto a stale module that no longer matched the new dependency's shape. The fix was small once we knew where to look; the lesson was bigger. When Android RN crashes are inexplicable and the JS stack is empty, check Hermes first.
 
-**Offline support, in the limited form we needed it.** Doctors lose signal in clinic basements. The right answer wasn't a full offline-first architecture (that's a multi-quarter rewrite) — it was caching the day's appointments and the patient list on app open, queueing writes locally, and surfacing a small "syncing" indicator. 80% of the value for 5% of the effort.
+**Offline support, in the limited form we needed it.** Doctors lose signal in clinic basements. The right answer wasn't a full offline-first architecture (a multi-quarter rewrite) — it was caching the day's appointments and the patient list on app open, queueing writes locally, and surfacing a small "syncing" indicator. 80% of the value for 5% of the effort.
 
 **Release cadence.** Two-week sprints, weekly TestFlight + internal Android builds, biweekly production releases. The discipline that made this work wasn't the cadence — it was making the build process boring. Once `pnpm release` did everything from version-bumping to store upload, releases stopped being a thing anyone dreaded.
+
+## Performance and bundle work
+
+React Native apps get heavy fast. A few things that paid off:
+
+- **Bundle audit.** Pruned dead native modules left over from earlier experiments. The Android APK and iOS IPA both came down meaningfully.
+- **Screen-level lazy loading.** The clinician app has tabs that 90% of users never touch on a given day — they don't need to be in the initial JS bundle.
+- **Reanimated on the hot paths.** The appointment-list scroll and patient-card transitions got worth-it perf wins from moving animations off the JS thread.
 
 ## Stack
 

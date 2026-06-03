@@ -1,16 +1,30 @@
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
+import Image from "next/image";
+import { Github, Linkedin, Twitter, Mail, Calendar } from "lucide-react";
 
 export function Hero() {
   return (
     <section className="pt-20 pb-16 md:pt-32 md:pb-24">
+      <Image
+        src="/avatar.jpg"
+        alt="Ayush Kashyap"
+        width={76}
+        height={76}
+        priority
+        className="mb-6 rounded-full ring-1 ring-ink/10"
+      />
       <p className="text-sm uppercase tracking-widest text-ink-muted">
-        Software engineer · Dehradun, India
+        SaaS engineer for hire · Dehradun, India
       </p>
       <h1 className="mt-4 text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
         Ayush Kashyap.
       </h1>
       <p className="mt-6 max-w-prose text-lg text-ink-muted">
-        I'm a software engineer at{" "}
+        I help startups ship production-ready SaaS — multi-tenant web plus
+        iOS/Android, on AWS — and rescue half-built apps that don't hold up yet.
+      </p>
+      <p className="mt-4 max-w-prose text-lg text-ink-muted">
+        3+ years building and scaling a multi-tenant platform end to end (a
+        production EHR at{" "}
         <a
           href="https://docplix.com"
           target="_blank"
@@ -19,24 +33,25 @@ export function Hero() {
         >
           DocPlix
         </a>
-        , a healthtech company. I built the EHR frontend from scratch and grew it into a multi-tenant platform — one codebase, several branded clinic deployments — across web, React Native mobile, and AWS.
-      </p>
-      <p className="mt-4 max-w-prose text-lg text-ink-muted">
-        Currently open to SDE / SDE II roles at product companies. Bengaluru on-site / hybrid or fully remote.
+        ), so I know how to make software survive real users.
       </p>
 
-      <div className="mt-8 flex items-center gap-3">
+      <div className="mt-8 flex flex-wrap items-center gap-3">
         <a
-          href="#contact"
-          className="inline-flex items-center justify-center rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper hover:opacity-90 transition"
+          href="mailto:ayushkashyaptx@gmail.com?subject=New%20project"
+          className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper hover:opacity-90 transition"
         >
-          Get in touch
+          <Mail size={16} />
+          Start a project
         </a>
         <a
-          href="/resume.pdf"
-          className="inline-flex items-center justify-center rounded-full border border-ink/15 px-5 py-2.5 text-sm font-medium text-ink hover:border-ink/40 transition"
+          href="https://cal.com/ayushk01"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 px-5 py-2.5 text-sm font-medium text-ink hover:border-ink/40 transition"
         >
-          Résumé
+          <Calendar size={16} />
+          Book a 15-min call
         </a>
       </div>
 

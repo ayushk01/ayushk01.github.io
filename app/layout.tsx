@@ -4,18 +4,19 @@ import { ThemeProvider } from "./theme-provider";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://ayushk01.github.io";
+const title = "Ayush Kashyap — SaaS engineer for hire";
 const description =
-  "Software engineer at DocPlix. Built a multi-tenant EHR from scratch. React, Node, React Native, AWS.";
+  "I help startups ship production-ready SaaS — multi-tenant web + iOS/Android on AWS — and rescue half-built apps that don't hold up yet. 3+ years building and scaling a production EHR.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Ayush Kashyap — Software Engineer",
+    default: title,
     template: "%s · Ayush Kashyap",
   },
   description,
   openGraph: {
-    title: "Ayush Kashyap — Software Engineer",
+    title,
     description,
     url: siteUrl,
     siteName: "Ayush Kashyap",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ayush Kashyap — Software Engineer",
+    title,
     description,
     creator: "@ayushhhkk_",
     images: ["/og.png"],
