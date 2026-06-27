@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Github, Linkedin, Twitter, Mail, Calendar } from "lucide-react";
+import { Github, Linkedin, Mail, Calendar } from "lucide-react";
 
 export function Hero() {
   return (
@@ -65,15 +65,6 @@ export function Hero() {
           className="hover:text-ink transition"
         >
           <Linkedin size={20} />
-        </a>
-        <a
-          href="https://x.com/ayushhhkk_"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="X"
-          className="hover:text-ink transition"
-        >
-          <Twitter size={20} />
         </a>
         <a
           href="mailto:ayushkashyaptx@gmail.com"

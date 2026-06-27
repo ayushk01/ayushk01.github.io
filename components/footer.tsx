@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+import { Github, Linkedin } from "lucide-react";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -24,15 +24,6 @@ export function Footer() {
             aria-label="LinkedIn"
           >
             <Linkedin size={16} />
-          </a>
-          <a
-            href="https://x.com/ayushhhkk_"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-ink transition"
-            aria-label="X"
-          >
-            <Twitter size={16} />
           </a>
           <a href="mailto:ayushkashyaptx@gmail.com" className="hover:text-ink transition">
             ayushkashyaptx@gmail.com

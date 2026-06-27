@@ -28,7 +28,6 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title,
     description,
-    creator: "@ayushhhkk_",
     images: ["/og.png"],
   },
   robots: { index: true, follow: true },
