@@ -26,7 +26,7 @@ const groups: Group[] = [
   },
   {
     title: "AI / ML",
-    items: ["Whisper fine-tuning", "Speech-to-text", "Python", "FHIR R4 / HL7"],
+    items: ["Speech-model fine-tuning", "Speech-to-text", "Python", "FHIR R4 / HL7"],
   },
   {
     title: "Cloud / Infra",

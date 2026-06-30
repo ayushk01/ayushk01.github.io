@@ -1,6 +1,6 @@
 ---
-title: "Docplix EHR — multi-tenant healthcare SaaS"
-blurb: "Architected and operate a multi-tenant, white-label EHR serving ~2,160 active clinics and ~770K patients across 100+ specialties. #1 all-time contributor to the core platform, with FHIR/NDHM interop and an in-house clinical-AI scribe."
+title: "Multi-tenant healthcare EHR"
+blurb: "Architected and operate a multi-tenant, white-label EHR serving 2,000+ active clinics and hundreds of thousands of patients across 100+ specialties. One of the principal contributors to the core platform, with FHIR interop for a national digital-health programme and an in-house clinical-AI scribe."
 stack:
   - React
   - TypeScript
@@ -13,11 +13,11 @@ stack:
 
 ## The product
 
-Docplix is a healthtech company building an EHR platform used by clinics across India. The clinician-facing surface is the web app, plus a family of React Native mobile apps for patients and clinicians (see the [mobile case study](/work/docplix-mobile/)).
+This is a multi-tenant EHR platform used by clinics across India. The clinician-facing surface is the web app, plus a family of React Native mobile apps for patients and clinicians (see the [mobile case study](/work/mobile-apps/)).
 
-I joined as an intern in March 2022 and converted to full-time the following year. Over ~4 years I've become the **#1 all-time contributor to the core platform — ~1,722 commits, about a quarter of a 6,845-commit codebase** — and I now lead the engineering team that ships it. My role spans architecture, backend, frontend, mobile, the AI stack, and cloud.
+Over ~4 years I've become **one of the principal contributors to the core platform (roughly a quarter of the codebase)** — and I now lead the engineering team that ships it. My role spans architecture, backend, frontend, mobile, the AI stack, and cloud.
 
-**Scale.** This is a production EHR, not a demo. Today it runs **~2,160 active clinics and hospitals, ~2,100+ practising doctors, and ~770,000 patients across 100+ medical specialties**, processing **~30,000 appointments a month** (740K+ all-time, 560K+ prescription line-items, 500K+ documents) — on a single shared multi-tenant MySQL (organisationId isolation, 1,000+ tables, per-org modules and branding), plus a **white-label layer of ~45 custom-branded deployments** including internationally rebranded sales (a French-market product). The platform work earned The WoW Machine Award, Docplix's internal recognition for building scalable systems (Jan 2023).
+**Scale.** This is a production EHR, not a demo. Today it runs **2,000+ active clinics and hospitals, thousands of practising doctors, and hundreds of thousands of patients across 100+ medical specialties**, processing **tens of thousands of appointments a month** — on a single shared multi-tenant MySQL (per-tenant isolation, per-org modules and branding), plus a **white-label layer of dozens of custom-branded deployments** including internationally deployed builds.
 
 <figure>
   <img src="/diagrams/ehr-wireframe.svg" alt="Illustrative wireframe of a clinician web dashboard — sidebar, header, summary cards, a chart, and a list. Not a real screenshot." />
@@ -37,7 +37,7 @@ What I own:
 
 ## Multi-tenant platform
 
-The biggest piece of engineering work has been building and scaling a real multi-tenant SaaS. One codebase powers the flagship Docplix EHR and ~45 clinic-branded white-label deployments — each with its own branding, configured feature set, and tenant-isolated data, all served from one build pipeline over a single shared MySQL.
+The biggest piece of engineering work has been building and scaling a real multi-tenant SaaS. One codebase powers the flagship EHR and dozens of clinic-branded white-label deployments — each with its own branding, configured feature set, and tenant-isolated data, all served from one build pipeline over a single shared MySQL.
 
 The point of getting the multi-tenant model right: the marginal cost of onboarding a new clinic drops from "months of bespoke work" to "fill in a config and flip a flag." That's the difference between an EHR that has to fork code for every customer and one that scales horizontally — the reason the platform sustains ~40–65 new clinics a month.
 
@@ -58,13 +58,13 @@ The point of getting the multi-tenant model right: the marginal cost of onboardi
 
 The parts I'm proudest of are the specialized, hard ones:
 
-- **FHIR R4 / HL7 for India's NDHM/ABDM.** Compliant DocumentBundles, validation, and terminology, so the platform plugs into the national digital-health network — the kind of interoperability work that's a moat in healthtech.
-- **An in-house clinical AI & speech stack** (Python): an **AI medical scribe ("Pāṇini")**, **Whisper fine-tuning**, and **speech-to-text** for ambient clinical documentation inside the EHR.
-- **React Native apps** — clinician (per-specialty Rx) and patient apps live on the App Store and Play Store; Hermes engine, native modules, Fastlane CI, CodePush OTA.
+- **FHIR R4 / HL7 for India's national digital-health programme.** Compliant DocumentBundles, validation, and terminology, so the platform plugs into the national digital-health network — the kind of interoperability work that's a moat in healthtech.
+- **An in-house clinical AI & speech stack** (Python): an **AI medical scribe**, **speech-model fine-tuning**, and **speech-to-text** for ambient clinical documentation inside the EHR.
+- **React Native apps** — clinician (per-specialty Rx) and patient apps live on the App Store and Play Store; Hermes engine, native modules, Fastlane CI, OTA updates.
 
 ## Tech-lead initiatives
 
-Beyond features, I've driven the platform-level work: consolidated the GitHub estate into one org, redesigned the ticket/issue architecture, led a fork-consolidation effort and an **AWS cost-optimization that cut spend ~50%**, optimized the PDF engine, and migrated the mobile apps from React Native 0.66.9 → 0.77.2.
+Beyond features, I've driven the platform-level work: led an engineering-estate consolidation, redesigned the ticket/issue architecture, led a fork-consolidation effort and a **cloud cost-optimization initiative**, optimized the PDF engine, and led a major React Native version migration across the mobile apps.
 
 ## Team lead
 
@@ -72,9 +72,9 @@ I manage the complete engineering team — code reviews, conventions, end-to-end
 
 ## Stack
 
-- **Frontend:** TypeScript, React, Redux, React Native (Hermes, Fastlane, CodePush), i18next.
+- **Frontend:** TypeScript, React, Redux, React Native (Hermes, Fastlane, OTA), i18next.
 - **Backend:** Node.js + Express, Socket.io for real-time, Redis/Kue for background jobs, JWT auth.
-- **Data:** MySQL + Sequelize (1,000+ tables, organisationId tenant isolation); Redis for caching.
-- **AI:** Python — Whisper fine-tuning, speech-to-text, and the "Pāṇini" clinical scribe.
-- **Interop:** FHIR R4 / HL7 for NDHM/ABDM.
+- **Data:** MySQL + Sequelize (per-tenant isolation); Redis for caching.
+- **AI:** Python — speech-model fine-tuning, speech-to-text, and an AI clinical scribe.
+- **Interop:** FHIR R4 / HL7 for a national digital-health programme.
 - **Infra:** AWS — EC2, S3, Polly, Translate, CloudWatch.

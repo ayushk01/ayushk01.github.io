@@ -4,10 +4,10 @@ Walk this list top to bottom before deploying. Most items are 1–2 line edits i
 
 ## Required before going live
 
-- [ ] **App Store + Play Store URLs for the DocPlix mobile apps.** Once you have them, paste them into:
-  - `content/work/docplix-mobile.mdx` (the case study)
+- [ ] **App Store + Play Store URLs for the mobile apps.** Once you have them, paste them into:
+  - `content/work/mobile-apps.mdx` (the case study)
   - `app/page.tsx` (the work cards on the homepage — optional, currently the card just links to the case study)
-- [ ] **Real numbers in the DocPlix EHR case study.** Open `content/work/docplix-ehr.mdx` and replace the bundle-size and "numbers" placeholders with actual figures (or remove those sections if you don't have them yet).
+- [ ] **Real numbers in the EHR case study.** Open `content/work/ehr-platform.mdx` and replace the bundle-size and "numbers" placeholders with actual figures (or remove those sections if you don't have them yet).
 - [ ] **Resume PDF.** Drop a current resume PDF at `public/resume.pdf`. The "Résumé" button on the homepage links to it.
 - [ ] **OG image.** Make a 1200×630 PNG (Figma → export) and put it at `public/og.png`. Should be readable as a thumbnail in a tweet. Use your name + tagline + photo.
 - [ ] **Profile photo.** `public/avatar.jpg`. Same headshot you'll use on LinkedIn / GitHub / X. (Currently not wired into the hero — add if you want a small avatar.)
@@ -16,7 +16,6 @@ Walk this list top to bottom before deploying. Most items are 1–2 line edits i
 
 - [ ] **Real case-study screenshots.** Add 1–2 product screenshots per case study in `content/work/*.mdx`. Blur sensitive data — patient names, clinic identifiers, etc.
 - [ ] **`/notes/` content.** Even one real short post makes the section credible. Use a recent X post or a "what I shipped this week" note.
-- [ ] **DocPlix link.** Confirm `https://docplix.com` is the correct marketing URL. If different, update in `components/hero.tsx`.
 - [ ] **Analytics.** Add Plausible or Vercel Analytics. Privacy-friendly counters are fine.
 
 ## Deploy

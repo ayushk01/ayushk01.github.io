@@ -42,25 +42,27 @@ export default function HomePage() {
         </h2>
         <div className="mt-6 space-y-4 text-ink leading-relaxed">
           <p>
-            For ~4 years at Docplix I've built and now operate a multi-tenant,
-            white-label EHR end to end. It serves <strong>~2,160 active clinics
-            and hospitals, ~2,100+ doctors, and ~770,000 patients across 100+
-            specialties</strong>, processing ~30,000 appointments a month — on a
-            single shared multi-tenant MySQL (organisationId isolation, 1,000+
-            tables, per-org modules and branding), plus a white-label layer of
-            ~45 custom-branded deployments including internationally rebranded
-            sales. I'm the <strong>#1 all-time contributor to the core platform
-            (~25% of the codebase)</strong> and lead the engineering team that
-            ships it.
+            For ~4 years I've built and now operate a multi-tenant,
+            white-label healthcare EHR end to end. It serves <strong>2,000+ active
+            clinics and hospitals, thousands of doctors, and hundreds of
+            thousands of patients across 100+ specialties</strong>, processing
+            tens of thousands of appointments a month — on a single shared
+            multi-tenant MySQL (per-tenant isolation, per-org modules and
+            branding), plus a white-label layer of dozens of custom-branded
+            deployments including internationally deployed builds. I'm
+            <strong> one of the principal contributors to the core platform
+            (roughly a quarter of the codebase)</strong> and lead the
+            engineering team that ships it.
           </p>
           <p>
             My role spans architecture, backend, frontend, mobile, the AI stack,
             and cloud. The same week I'll be tuning a MySQL query, debugging a
             Hermes bytecode crash on Android, shaping a FHIR DocumentBundle for
-            NDHM, and setting up the release pipeline. The parts I'm proudest of
-            are the hard, specialized ones: an in-house clinical-AI scribe with
-            Whisper fine-tuning and speech-to-text, and FHIR R4 / HL7
-            interoperability for India's national digital-health network.
+            a national digital-health programme, and setting up the release
+            pipeline. The parts I'm proudest of are the hard, specialized ones:
+            an in-house clinical-AI scribe with speech-model fine-tuning and
+            speech-to-text, and FHIR R4 / HL7 interoperability for India's
+            national digital-health network.
           </p>
           <p>
             Healthtech depth — FHIR/HL7, multi-tenant SaaS at real scale,
@@ -78,16 +80,16 @@ export default function HomePage() {
         </h2>
         <div className="mt-6 grid gap-4">
           <WorkCard
-            title="Docplix EHR — multi-tenant healthcare SaaS"
-            blurb="Architected and operate a multi-tenant, white-label EHR — ~2,160 active clinics, ~2,100+ doctors, ~770K patients across 100+ specialties, ~30K appointments/month. #1 all-time contributor (~25% of the core platform). FHIR/NDHM interop and an in-house clinical-AI scribe."
+            title="Multi-tenant healthcare EHR"
+            blurb="Architected and operate a multi-tenant, white-label EHR — 2,000+ active clinics, thousands of doctors, hundreds of thousands of patients across 100+ specialties, tens of thousands of appointments a month. One of the principal contributors to the core platform (roughly a quarter of the codebase). FHIR interop with a national digital-health programme, and an in-house clinical-AI scribe."
             stack={["React", "TypeScript", "Node.js", "Python", "MySQL", "FHIR/HL7", "AWS"]}
-            href="/work/docplix-ehr"
+            href="/work/ehr-platform"
           />
           <WorkCard
-            title="Docplix mobile — patient + clinician apps"
-            blurb="A family of React Native apps (patient + per-specialty clinician Rx), live on the App Store and Play Store. Shared types and data layer with the web platform. Owned navigation, networking, push, and release engineering end to end — Hermes, Fastlane, CodePush."
-            stack={["React Native", "iOS", "Android", "Hermes", "Fastlane", "CodePush"]}
-            href="/work/docplix-mobile"
+            title="Healthcare mobile apps — patient + clinician"
+            blurb="A family of React Native apps (patient + per-specialty clinician Rx), live on the App Store and Play Store. Shared types and data layer with the web platform. Owned navigation, networking, push, and release engineering end to end — Hermes, Fastlane, OTA."
+            stack={["React Native", "iOS", "Android", "Hermes", "Fastlane", "OTA"]}
+            href="/work/mobile-apps"
           />
           <WorkCard
             title="WoodVer Reward — loyalty app (freelance)"
@@ -110,10 +112,11 @@ export default function HomePage() {
             </h3>
             <p className="mt-3 text-ink-muted leading-relaxed">
               I architected and operate a multi-tenant EHR on a single shared
-              MySQL — organisationId isolation, 1,000+ tables, per-org modules
-              and branding — serving ~2,160 active clinics, ~770K patients, and
-              ~30K appointments/month, plus a ~45 deployment white-label layer.
-              Onboarding a new clinic is config, not a release.
+              MySQL — per-tenant isolation, per-org modules and branding —
+              serving 2,000+ active clinics, hundreds of thousands of patients,
+              and tens of thousands of appointments a month, plus a white-label
+              layer of dozens of deployments. Onboarding a new clinic is config,
+              not a release.
             </p>
           </div>
           <div className="rounded-lg border border-ink/10 p-6">
@@ -121,12 +124,12 @@ export default function HomePage() {
               Healthcare interop & clinical AI
             </h3>
             <p className="mt-3 text-ink-muted leading-relaxed">
-              FHIR R4 / HL7 interoperability for India's NDHM/ABDM — compliant
-              DocumentBundles, validation, terminology. And an in-house clinical
-              AI &amp; speech stack in Python: an AI medical scribe ("Pāṇini"),
-              Whisper fine-tuning, and speech-to-text for ambient clinical
-              documentation. Plus React Native clinician and patient apps live
-              on both stores.
+              FHIR R4 / HL7 interoperability for India's national digital-health
+              programme — compliant DocumentBundles, validation, terminology.
+              And an in-house clinical AI &amp; speech stack in Python: an AI
+              medical scribe, speech-model fine-tuning, and speech-to-text for
+              ambient clinical documentation. Plus React Native clinician and
+              patient apps live on both stores.
             </p>
           </div>
         </div>

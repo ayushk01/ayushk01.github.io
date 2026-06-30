@@ -19,15 +19,16 @@ export function Hero() {
         Ayush Kashyap.
       </h1>
       <p className="mt-6 max-w-prose text-lg text-ink-muted">
-        I build and operate a multi-tenant EHR at scale — ~2,160 clinics,
-        ~2,100+ doctors, and ~770K patients across 100+ specialties. FHIR/NDHM,
-        a clinical-AI scribe, and React Native at scale.
+        I build and operate a multi-tenant healthcare EHR at scale — 2,000+
+        clinics, thousands of doctors, and hundreds of thousands of patients
+        across 100+ specialties. FHIR interop with a national digital-health
+        programme, a clinical-AI scribe, and React Native at scale.
       </p>
       <p className="mt-4 max-w-prose text-lg text-ink-muted">
-        ~4 years at Docplix, where I'm the #1 all-time contributor to the core
-        platform (~25% of the codebase) and lead the engineering team that ships
-        it. I'm now openly looking for a senior role — remote, or relocation to
-        Australia.
+        ~4 years on the platform, where I'm one of the principal contributors to
+        the core platform (roughly a quarter of the codebase) and lead the
+        engineering team that ships it. I'm now openly looking for a senior role
+        — remote, or relocation to Australia.
       </p>
 
       <div className="mt-8 flex flex-wrap items-center gap-3">

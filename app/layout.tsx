@@ -6,7 +6,7 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://ayushk01.github.io";
 const title = "Ayush Kashyap — Senior Software Engineer · Healthtech";
 const description =
-  "I build and operate a multi-tenant EHR serving ~2,160 clinics and ~770K patients. FHIR/NDHM, clinical AI, and React Native at scale. #1 contributor to the core platform. Open to senior roles — remote or Australia relocation.";
+  "I build and operate a multi-tenant healthcare EHR serving 2,000+ clinics and hundreds of thousands of patients. A national digital-health programme, clinical AI, and React Native at scale. One of the principal contributors to the core platform. Open to senior roles — remote or Australia relocation.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -74,8 +74,8 @@ Open `_CONTENT_TODO.md` and walk through it. Most of what's in there is "fill in
 │       └── page.tsx                Short writing index
 ├── content/
 │   ├── work/
-│   │   ├── docplix-ehr.mdx         Case study 1 — multi-tenant EHR
-│   │   ├── docplix-mobile.mdx      Case study 2 — RN apps
+│   │   ├── ehr-platform.mdx        Case study 1 — multi-tenant EHR
+│   │   ├── mobile-apps.mdx         Case study 2 — RN apps
 │   │   ├── woodver.mdx             Case study 3 — Woodver freelance
 │   │   └── side-project.mdx        Template for future case studies
 │   └── notes/
