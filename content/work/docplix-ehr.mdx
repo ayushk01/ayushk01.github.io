@@ -1,43 +1,45 @@
 ---
-title: "DocPlix EHR — multi-tenant SaaS frontend"
-blurb: "Built the EHR frontend from scratch and grew it into a multi-tenant SaaS platform serving dozens of clinic chains and thousands of clinicians from one codebase."
+title: "Docplix EHR — multi-tenant healthcare SaaS"
+blurb: "Architected and operate a multi-tenant, white-label EHR serving ~2,160 active clinics and ~770K patients across 100+ specialties. #1 all-time contributor to the core platform, with FHIR/NDHM interop and an in-house clinical-AI scribe."
 stack:
   - React
   - TypeScript
-  - Multi-tenant
   - Node.js
+  - Python
+  - MySQL
+  - FHIR/HL7
   - AWS
 ---
 
 ## The product
 
-DocPlix is a healthtech company building an EHR platform used by clinics in India. The clinician-facing surface is the web app, plus a pair of React Native mobile apps for patients and clinicians (see the [mobile case study](/work/docplix-mobile/)).
+Docplix is a healthtech company building an EHR platform used by clinics across India. The clinician-facing surface is the web app, plus a family of React Native mobile apps for patients and clinicians (see the [mobile case study](/work/docplix-mobile/)).
 
-I joined as an intern in April 2022 and converted to full-time the following April. Since then I've been the engineer on the frontend platform.
+I joined as an intern in March 2022 and converted to full-time the following year. Over ~4 years I've become the **#1 all-time contributor to the core platform — ~1,722 commits, about a quarter of a 6,845-commit codebase** — and I now lead the engineering team that ships it. My role spans architecture, backend, frontend, mobile, the AI stack, and cloud.
 
-**Outcome.** What started as a single-tenant prototype now powers branded deployments for **dozens of clinic chains and thousands of clinicians off one codebase**, with the marginal cost of onboarding a new chain measured in days rather than months. My work has shipped in the product demos that brought on the first paying clinics — and the platform work earned The WoW Machine Award, DocPlix's internal recognition for building scalable systems (Jan 2023).
+**Scale.** This is a production EHR, not a demo. Today it runs **~2,160 active clinics and hospitals, ~2,100+ practising doctors, and ~770,000 patients across 100+ medical specialties**, processing **~30,000 appointments a month** (740K+ all-time, 560K+ prescription line-items, 500K+ documents) — on a single shared multi-tenant MySQL (organisationId isolation, 1,000+ tables, per-org modules and branding), plus a **white-label layer of ~45 custom-branded deployments** including internationally rebranded sales (a French-market product). The platform work earned The WoW Machine Award, Docplix's internal recognition for building scalable systems (Jan 2023).
 
 <figure>
   <img src="/diagrams/ehr-wireframe.svg" alt="Illustrative wireframe of a clinician web dashboard — sidebar, header, summary cards, a chart, and a list. Not a real screenshot." />
   <figcaption>Illustrative wireframe of the clinician dashboard — not a product screenshot.</figcaption>
 </figure>
 
-## Built from scratch
+## End-to-end ownership
 
-When I joined, the frontend was a small prototype. Over the following months I rebuilt it from zero — the repo, the build tooling, the routing, the auth flow, the design system, the state management — into something the team could ship every two weeks.
+When I joined, the platform was small. Over the following years I built and grew it across the whole stack — the repo and build tooling, routing and auth, the design system, the backend APIs, the data model, the mobile apps, and the cloud underneath — into something the team ships on a regular cadence.
 
-What I owned along the way:
+What I own:
 
-- **Architecture and tooling.** Framework choice, build setup, testing approach, folder structure. The decisions the team still uses today.
+- **Architecture and tooling.** Framework choices, build setup, folder structure, and the conventions the team still uses today.
 - **Auth and access control.** Login, session refresh, role gates, audit trails — the bits clinicians don't notice when they work and immediately notice when they don't.
 - **Design system.** The component library, design tokens, and theming primitives the entire app is built from.
-- **State and data layer.** React Query for server state, a small Redux slice for cross-page UI state, a typed REST client generated from the API spec.
+- **Backend and data layer.** Node.js + Express APIs over a shared multi-tenant MySQL (Sequelize), real-time over Socket.io, background jobs on Redis/Kue, and a typed client between web, mobile, and the API.
 
 ## Multi-tenant platform
 
-The biggest piece of engineering work has been turning the single-tenant app into a real multi-tenant SaaS. The same codebase now powers the flagship DocPlix EHR and several clinic-branded deployments for other chains — each with its own branding, configured feature set, and isolated data, all served from one build pipeline.
+The biggest piece of engineering work has been building and scaling a real multi-tenant SaaS. One codebase powers the flagship Docplix EHR and ~45 clinic-branded white-label deployments — each with its own branding, configured feature set, and tenant-isolated data, all served from one build pipeline over a single shared MySQL.
 
-The point of getting the multi-tenant model right: the marginal cost of onboarding a new clinic chain drops from "months of bespoke work" to "fill in a config and flip a flag." That's the difference between an EHR startup that has to fork code for every customer and one that scales horizontally.
+The point of getting the multi-tenant model right: the marginal cost of onboarding a new clinic drops from "months of bespoke work" to "fill in a config and flip a flag." That's the difference between an EHR that has to fork code for every customer and one that scales horizontally — the reason the platform sustains ~40–65 new clinics a month.
 
 <figure>
   <img src="/diagrams/ehr-architecture.svg" alt="Multi-tenant architecture: one codebase resolved at request time through theming, auth scoping, and feature flags into branded per-tenant deployments over tenant-isolated data on AWS." />
@@ -50,23 +52,29 @@ The point of getting the multi-tenant model right: the marginal cost of onboardi
 
 **Auth boundaries.** Getting tenant scoping right is the kind of thing that's invisible when it works and catastrophic when it doesn't. We pushed the tenant context as high in the React tree as possible, made the typed REST client refuse to fire requests without a tenant in scope, and added a linting rule that catches the one shape of mistake that would have leaked data across tenants.
 
-**Feature flags.** A per-tenant feature-flag layer on top of our config service, so a clinic chain can opt into newer modules without affecting others. Sounds simple. It isn't — the gnarly part is letting non-flagged code paths assume features exist while flagged paths gate them gracefully, without scattering `if (flagged) {}` everywhere.
+**Feature flags.** A per-tenant feature-flag layer on top of our config service, so a clinic can opt into newer modules without affecting others. Sounds simple. It isn't — the gnarly part is letting non-flagged code paths assume features exist while flagged paths gate them gracefully, without scattering `if (flagged) {}` everywhere.
 
-## Performance and stability
+## Healthcare interop & clinical AI
 
-The team is small, so performance and reliability work falls on whoever's around. I've spent a meaningful chunk of time on:
+The parts I'm proudest of are the specialized, hard ones:
 
-- **Bundle size.** Code-splitting routes that aren't on the critical path. Re-evaluating dependencies (swapping out an oversized chart library was an easy double-digit-percent win).
-- **Render performance.** Profiling the slow patient-history screens and fixing the offenders — usually a render-loop pattern we'd let slide.
-- **Error reporting.** Wired up Sentry, set up source-map uploads, made errors actionable rather than noise.
+- **FHIR R4 / HL7 for India's NDHM/ABDM.** Compliant DocumentBundles, validation, and terminology, so the platform plugs into the national digital-health network — the kind of interoperability work that's a moat in healthtech.
+- **An in-house clinical AI & speech stack** (Python): an **AI medical scribe ("Pāṇini")**, **Whisper fine-tuning**, and **speech-to-text** for ambient clinical documentation inside the EHR.
+- **React Native apps** — clinician (per-specialty Rx) and patient apps live on the App Store and Play Store; Hermes engine, native modules, Fastlane CI, CodePush OTA.
+
+## Tech-lead initiatives
+
+Beyond features, I've driven the platform-level work: consolidated the GitHub estate into one org, redesigned the ticket/issue architecture, led a fork-consolidation effort and an **AWS cost-optimization that cut spend ~50%**, optimized the PDF engine, and migrated the mobile apps from React Native 0.66.9 → 0.77.2.
 
 ## Team lead
 
-As the team grew, I onboarded new engineers — code reviews, pairing on first features, conventions for testing and PR descriptions. The team's frontend bar is something I helped set, and the value of that compounds more than my individual commits do.
+I manage the complete engineering team — code reviews, conventions, end-to-end delivery, onboarding and mentoring new engineers. The bar the team holds is something I helped set, and the value of that compounds more than my individual commits do.
 
 ## Stack
 
-- **Frontend:** TypeScript, React, React Query, Redux Toolkit (small slice), Tailwind-ish utility CSS, Radix primitives.
-- **Backend (the parts I touch):** Node.js + Express; Flask for the ML-flavored endpoints.
-- **Data:** PostgreSQL for the relational core; DynamoDB for a few high-write surfaces; Redis for caching.
-- **Infra:** AWS — EC2 / ECS / Lambda / Fargate for compute; S3 / RDS / DynamoDB / CloudFront for storage and edge.
+- **Frontend:** TypeScript, React, Redux, React Native (Hermes, Fastlane, CodePush), i18next.
+- **Backend:** Node.js + Express, Socket.io for real-time, Redis/Kue for background jobs, JWT auth.
+- **Data:** MySQL + Sequelize (1,000+ tables, organisationId tenant isolation); Redis for caching.
+- **AI:** Python — Whisper fine-tuning, speech-to-text, and the "Pāṇini" clinical scribe.
+- **Interop:** FHIR R4 / HL7 for NDHM/ABDM.
+- **Infra:** AWS — EC2, S3, Polly, Translate, CloudWatch.

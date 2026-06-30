@@ -4,9 +4,9 @@ import { ThemeProvider } from "./theme-provider";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://ayushk01.github.io";
-const title = "Ayush Kashyap — SaaS engineer for hire";
+const title = "Ayush Kashyap — Senior Software Engineer · Healthtech";
 const description =
-  "I help startups ship production-ready SaaS — multi-tenant web + iOS/Android on AWS — and rescue half-built apps that don't hold up yet. 3+ years building and scaling a production EHR.";
+  "I build and operate a multi-tenant EHR serving ~2,160 clinics and ~770K patients. FHIR/NDHM, clinical AI, and React Native at scale. #1 contributor to the core platform. Open to senior roles — remote or Australia relocation.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -18,15 +18,19 @@ const groups: Group[] = [
   },
   {
     title: "Backend",
-    items: ["Node.js", "Express", "Flask", "REST APIs", "Auth"],
+    items: ["Node.js", "Express", "Socket.io", "Redis / Kue", "REST APIs", "JWT"],
   },
   {
     title: "Data",
-    items: ["PostgreSQL", "MySQL", "DynamoDB", "Redis"],
+    items: ["MySQL", "Sequelize", "Redis", "PostgreSQL"],
+  },
+  {
+    title: "AI / ML",
+    items: ["Whisper fine-tuning", "Speech-to-text", "Python", "FHIR R4 / HL7"],
   },
   {
     title: "Cloud / Infra",
-    items: ["AWS EC2 / ECS / Lambda / Fargate", "S3", "RDS / Aurora", "CloudFront", "Route53"],
+    items: ["AWS EC2", "S3", "Polly", "Translate", "CloudWatch"],
   },
 ];
 

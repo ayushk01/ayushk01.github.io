@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Github, Linkedin, Mail, Calendar } from "lucide-react";
+import { Github, Linkedin, Mail } from "lucide-react";
 
 export function Hero() {
   return (
@@ -13,37 +13,39 @@ export function Hero() {
         className="mb-6 rounded-full ring-1 ring-ink/10"
       />
       <p className="text-sm uppercase tracking-widest text-ink-muted">
-        SaaS engineer for hire · Dehradun, India
+        Senior Software Engineer · Healthtech · Lucknow / Remote
       </p>
       <h1 className="mt-4 text-4xl md:text-6xl font-semibold tracking-tight leading-[1.05]">
         Ayush Kashyap.
       </h1>
       <p className="mt-6 max-w-prose text-lg text-ink-muted">
-        I help startups ship production-ready SaaS — multi-tenant web plus
-        iOS/Android, on AWS — and rescue half-built apps that don't hold up yet.
+        I build and operate a multi-tenant EHR at scale — ~2,160 clinics,
+        ~2,100+ doctors, and ~770K patients across 100+ specialties. FHIR/NDHM,
+        a clinical-AI scribe, and React Native at scale.
       </p>
       <p className="mt-4 max-w-prose text-lg text-ink-muted">
-        3+ years building and scaling a multi-tenant platform end to end (a
-        production EHR at DocPlix), so I know how to make software survive real
-        users.
+        ~4 years at Docplix, where I'm the #1 all-time contributor to the core
+        platform (~25% of the codebase) and lead the engineering team that ships
+        it. I'm now openly looking for a senior role — remote, or relocation to
+        Australia.
       </p>
 
       <div className="mt-8 flex flex-wrap items-center gap-3">
         <a
-          href="mailto:ayushkashyaptx@gmail.com?subject=New%20project"
+          href="mailto:ayushkashyaptx@gmail.com?subject=Senior%20engineering%20role"
           className="inline-flex items-center justify-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-paper hover:opacity-90 transition"
         >
           <Mail size={16} />
-          Start a project
+          Get in touch
         </a>
         <a
-          href="https://cal.com/ayushk01"
+          href="https://www.linkedin.com/in/ayushk01"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center justify-center gap-2 rounded-full border border-ink/15 px-5 py-2.5 text-sm font-medium text-ink hover:border-ink/40 transition"
         >
-          <Calendar size={16} />
-          Book a 15-min call
+          <Linkedin size={16} />
+          Connect on LinkedIn
         </a>
       </div>
 
