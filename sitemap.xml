@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Convenience copy: some crawlers request /sitemap.xml by convention.
+     The canonical index (robots.txt) is /sitemap-index.xml; both point at /sitemap-0.xml. -->
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>https://ayushk01.github.io/sitemap-0.xml</loc>
+  </sitemap>
+</sitemapindex>
