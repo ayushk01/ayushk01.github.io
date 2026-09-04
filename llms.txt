@@ -1,7 +1,8 @@
-# Ayush Kashyap — Senior Software Engineer · Healthtech
+# Ayush Kashyap — Software Development Engineer II / Tech Lead · Healthtech
 
-> Ayush Kashyap builds and operates production healthcare software at scale. For ~4 years he has
-> built and now operates a multi-tenant, white-label EHR platform end-to-end — and he is one of the
+> Software Development Engineer II / Tech Lead — builds and runs a multi-tenant, white-label
+> healthcare EHR/SaaS end-to-end, web + iOS/Android on AWS. For ~4 years he has built and now runs
+> the platform (joined as intern Mar 2022 → SDE-I → SDE-II / Tech Lead; leads the engineering team) — and he is one of the
 > principal contributors to the core platform (roughly a quarter of the codebase). It serves 2,000+
 > active clinics, thousands of doctors, and hundreds of thousands of patients across 100+
 > specialties, processing tens of thousands of appointments a month. Stack: TypeScript, Python,
@@ -10,7 +11,7 @@
 
 ## Highlights
 - Architected and operate a multi-tenant healthtech EHR platform: one codebase serving 2,000+ active clinics, thousands of doctors, and hundreds of thousands of patients across 100+ specialties, with per-tenant isolation and a white-label layer of dozens of custom-branded deployments — no per-client forks.
-- Implemented FHIR R4 / HL7 interoperability for a national digital-health programme.
+- Implemented FHIR R4 / HL7 interoperability for India's National Digital Health Mission (NDHM / ABDM).
 - Built an in-house clinical AI & speech stack (Python): an AI medical scribe, speech-model fine-tuning, and speech-to-text.
 - Shipped clinician + patient apps (React Native) live on the App Store & Play Store — Hermes, Fastlane, OTA updates.
 - Tech lead: GitHub org consolidation, deployment pipeline, a cloud cost-optimization initiative, and a major React Native version migration.
@@ -21,6 +22,9 @@
 - [Work](https://ayushk01.github.io/work): case studies (the EHR platform, Letsdrive, Verbatim, and more).
 - [Work with me](https://ayushk01.github.io/hire): open to senior engineering roles — remote or Australia relocation.
 - [CV](https://ayushk01.github.io/cv): experience, skills, and selected work.
+- [Résumé (PDF)](https://ayushk01.github.io/resume.pdf)
+- [AI case study (PDF)](https://ayushk01.github.io/Ayush-Kashyap-AI-Case-Study.pdf): shipping an ambient AI medical scribe clinicians trust.
+- [Verbatim — live demo](https://findingleads-pied.vercel.app): AI feedback-intelligence (React, serverless, Gemini).
 - [Notes](https://ayushk01.github.io/notes): technical writing.
 
 ## Notes
