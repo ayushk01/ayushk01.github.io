@@ -1,35 +1,39 @@
-# Ayush Kashyap — Software Development Engineer II / Tech Lead · Healthtech
+# Ayush Kashyap — Software Development Engineer II (Tech Lead) · Healthtech
 
-> Software Development Engineer II / Tech Lead — builds and runs a multi-tenant, white-label
-> healthcare EHR/SaaS end-to-end, web + iOS/Android on AWS. For ~4 years he has built and now runs
-> the platform (joined as intern Mar 2022 → SDE-I → SDE-II / Tech Lead; leads the engineering team) — and he is one of the
-> principal contributors to the core platform (roughly a quarter of the codebase). It serves 2,000+
-> active clinics, thousands of doctors, and hundreds of thousands of patients across 100+
-> specialties, processing tens of thousands of appointments a month. Stack: TypeScript, Python,
-> React, React Native, Node/Express, MySQL, Redis, Socket.io, AWS, FHIR R4/HL7. Open to senior
-> engineering roles — remote or Australia relocation.
+> Software Development Engineer II (Tech Lead) — builds and runs a multi-tenant, white-label
+> healthcare EHR/SaaS end-to-end, web + iOS/Android on AWS. 5+ years building production
+> software: 3+ years full-time (after a 1-year internship, from Apr 2022: Intern → SDE → SDE II
+> (Tech Lead); leads the engineering team), plus freelance and part-time client work since late
+> 2020. He is the #1 all-time contributor to the core EHR frontend and one of the principal
+> contributors to the core platform. It serves 2,000+ active clinics, thousands of doctors, and
+> hundreds of thousands of patients across 100+ specialties, processing tens of thousands of
+> appointments a month. Stack: TypeScript, JavaScript, Python, Dart · React, Next.js, React
+> Native, Flutter · Node.js, Express, Flask, Socket.io, Redis · MySQL, PostgreSQL · AWS (ECS, EC2,
+> S3, CloudWatch, Polly, Translate) · FHIR R4/HL7/ABDM. Open to senior engineering roles. Based
+> in India · open to Bengaluru, Hyderabad, Pune, Gurugram or remote; open to relocating. 15-day
+> notice.
 
 ## Highlights
-- Architected and operate a multi-tenant healthtech EHR platform: one codebase serving 2,000+ active clinics, thousands of doctors, and hundreds of thousands of patients across 100+ specialties, with per-tenant isolation and a white-label layer of dozens of custom-branded deployments — no per-client forks.
+- Architected and operates a multi-tenant healthtech EHR platform: one product serving 2,000+ active clinics, thousands of doctors, and hundreds of thousands of patients across 100+ specialties, with per-tenant isolation and a white-label layer of dozens of custom-branded deployments — no per-client forks.
 - Implemented FHIR R4 / HL7 interoperability for India's National Digital Health Mission (NDHM / ABDM).
-- Built an in-house clinical AI & speech stack (Python): an AI medical scribe, speech-model fine-tuning, and speech-to-text.
+- Leads the clinical-AI and speech work (Python): an AI medical scribe, live with a pilot group of clinicians (some AI features in production); led the team's speech-model (Whisper) fine-tuning.
 - Shipped clinician + patient apps (React Native) live on the App Store & Play Store — Hermes, Fastlane, OTA updates.
-- Tech lead: engineering-estate consolidation, deployment pipeline, a cloud cost-optimization initiative, and a major React Native version migration.
-- Built Letsdrive solo over ~2 years — a carpooling + peer-to-peer car-rental marketplace across three codebases (Flutter mobile, TypeScript/Express/Prisma backend with a 13-model schema, Next.js admin).
+- Tech lead: consolidated the repositories into one GitHub organisation, set up automatic deployment on every merge across the platform, AWS cost-optimisation, and a major React Native upgrade.
+- Built Letsdrive end to end, solo (independent client project, 2024–25) — a carpooling + peer-to-peer car-rental marketplace across three codebases (Flutter mobile, TypeScript/Express/Prisma backend with a 13-model schema, Next.js admin).
 
 ## Pages
 - [Home](https://ayushk01.github.io/): identity, selected work, and what he does.
 - [Work](https://ayushk01.github.io/work): case studies (the EHR platform, Letsdrive, Verbatim, and more).
-- [Work with me](https://ayushk01.github.io/hire): open to senior engineering roles — remote or Australia relocation.
+- [Work with me](https://ayushk01.github.io/hire): open to senior engineering roles — based in India; open to Bengaluru, Hyderabad, Pune, Gurugram or remote; open to relocating.
 - [CV](https://ayushk01.github.io/cv): experience, skills, and selected work.
 - [Résumé (PDF)](https://ayushk01.github.io/resume.pdf)
 - [AI case study (PDF)](https://ayushk01.github.io/Ayush-Kashyap-AI-Case-Study.pdf): shipping an ambient AI medical scribe clinicians trust.
-- [Verbatim — live demo](https://findingleads-pied.vercel.app): AI feedback-intelligence (React, serverless, Gemini).
+- [Verbatim — live demo](https://findingleads-pied.vercel.app): side project — AI feedback-intelligence (React, serverless, Gemini).
 - [Notes](https://ayushk01.github.io/notes): technical writing.
 
 ## Notes
 - [Two marketplaces, one schema](https://ayushk01.github.io/notes/two-marketplaces-one-schema): modeling carpooling and car rental in one PostgreSQL schema.
-- [Shipping three codebases solo](https://ayushk01.github.io/notes/shipping-three-codebases-solo): the judgment behind a one-person, multi-year build.
+- [Shipping three codebases solo](https://ayushk01.github.io/notes/shipping-three-codebases-solo): the judgment behind a one-person build.
 
 ## Contact
 - Email: ayushkashyaptx@gmail.com
