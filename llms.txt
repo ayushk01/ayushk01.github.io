@@ -2,16 +2,15 @@
 
 > Software Development Engineer II (Tech Lead) — builds and runs a multi-tenant, white-label
 > healthcare EHR/SaaS end-to-end, web + iOS/Android on AWS. 5+ years building production
-> software: 3+ years full-time (after a 1-year internship, from Apr 2022: Intern → SDE → SDE II
+> software: 3+ years full-time (after a 1-year internship, from Mar 2022: Intern → SDE → SDE II
 > (Tech Lead); leads the engineering team), plus freelance and part-time client work since late
 > 2020. He is the #1 all-time contributor to the core EHR frontend and one of the principal
 > contributors to the core platform. It serves 2,000+ active clinics, thousands of doctors, and
 > hundreds of thousands of patients across 100+ specialties, processing tens of thousands of
 > appointments a month. Stack: TypeScript, JavaScript, Python, Dart · React, Next.js, React
 > Native, Flutter · Node.js, Express, Flask, Socket.io, Redis · MySQL, PostgreSQL · AWS (ECS, EC2,
-> S3, CloudWatch, Polly, Translate) · FHIR R4/HL7/ABDM. Open to senior engineering roles. Based
-> in India · open to Bengaluru, Hyderabad, Pune, Gurugram or remote; open to relocating. 15-day
-> notice.
+> S3, CloudWatch, Polly, Translate) · FHIR R4/HL7/ABDM. Open to software engineering roles (full-stack, backend, mobile).
+> Based in Indore, India · open to relocating anywhere in India, or remote · available immediately.
 
 ## Highlights
 - Architected and operates a multi-tenant healthtech EHR platform: one product serving 2,000+ active clinics, thousands of doctors, and hundreds of thousands of patients across 100+ specialties, with per-tenant isolation and a white-label layer of dozens of custom-branded deployments — no per-client forks.
@@ -24,7 +23,7 @@
 ## Pages
 - [Home](https://ayushk01.github.io/): identity, selected work, and what he does.
 - [Work](https://ayushk01.github.io/work): case studies (the EHR platform, Letsdrive, Verbatim, and more).
-- [Work with me](https://ayushk01.github.io/hire): open to senior engineering roles — based in India; open to Bengaluru, Hyderabad, Pune, Gurugram or remote; open to relocating.
+- [Work with me](https://ayushk01.github.io/hire): open to software engineering roles (full-stack, backend, mobile) — based in Indore, India · open to relocating anywhere in India, or remote · available immediately.
 - [CV](https://ayushk01.github.io/cv): experience, skills, and selected work.
 - [Résumé (PDF)](https://ayushk01.github.io/resume.pdf)
 - [AI case study (PDF)](https://ayushk01.github.io/Ayush-Kashyap-AI-Case-Study.pdf): shipping an ambient AI medical scribe clinicians trust.
