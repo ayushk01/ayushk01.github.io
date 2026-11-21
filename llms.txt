@@ -1,15 +1,17 @@
-# Ayush Kashyap — Software Development Engineer II (Tech Lead) · Healthtech
+# Ayush Kashyap — Full-stack Software Engineer · Web, Mobile & AI
 
-> Software Development Engineer II (Tech Lead) — builds and runs a multi-tenant, white-label
-> healthcare EHR/SaaS end-to-end, web + iOS/Android on AWS. 5+ years building production
-> software: 3+ years full-time (after a 1-year internship, from Mar 2022: Intern → SDE → SDE II
-> (Tech Lead); leads the engineering team), plus freelance and part-time client work since late
-> 2020. He is the #1 all-time contributor to the core EHR frontend and one of the principal
-> contributors to the core platform. It serves 2,000+ active clinics, thousands of doctors, and
-> hundreds of thousands of patients across 100+ specialties, processing tens of thousands of
-> appointments a month. Stack: TypeScript, JavaScript, Python, Dart · React, Next.js, React
-> Native, Flutter · Node.js, Express, Flask, Socket.io, Redis · MySQL, PostgreSQL · AWS (ECS, EC2,
-> S3, CloudWatch, Polly, Translate) · FHIR R4/HL7/ABDM. Open to software engineering roles (full-stack, backend, mobile).
+> Full-stack software engineer who ships production systems end to end — web, mobile and AI —
+> and makes complicated systems simple: to use, to ship, to scale. Writing code since 9th grade;
+> 4+ years professional (from Mar 2022: Intern → SDE → SDE II (Tech Lead); 3+ years full-time;
+> leads the dev team), plus freelance and part-time client work before that. His flagship work
+> is in healthcare: he is the #1 all-time contributor to the core frontend of a multi-tenant,
+> white-label EHR/SaaS (web + iOS/Android on AWS) and one of the principal contributors to the
+> core platform. It serves 2,000+ active clinics, thousands of doctors, and hundreds of thousands
+> of patients across 100+ specialties, processing tens of thousands of appointments a month.
+> Stack: TypeScript, JavaScript, Python, Dart · React, Next.js, React Native, Flutter · Node.js,
+> Express, Flask, Socket.io, Redis · MySQL, PostgreSQL · AWS (ECS, EC2, S3, CloudWatch, Polly,
+> Translate) · LLM integration, speech-to-text · FHIR R4/HL7/ABDM.
+> Open to software engineering roles (full-stack, backend, mobile, AI application).
 > Based in Indore, India · open to relocating anywhere in India, or remote · available immediately.
 
 ## Highlights
@@ -18,6 +20,7 @@
 - Leads the clinical-AI and speech work (Python): an AI medical scribe, live with a pilot group of clinicians (some AI features in production); led the team's speech-model (Whisper) fine-tuning.
 - Shipped clinician + patient apps (React Native) live on the App Store & Play Store — Hermes, Fastlane, OTA updates.
 - Tech lead: consolidated the repositories into one GitHub organisation, set up automatic deployment on every merge across the platform, AWS cost-optimisation, and a major React Native upgrade.
+- Open source: fhir-notecheck — https://github.com/ayushk01/fhir-notecheck
 - Built Letsdrive end to end, solo (independent client project, 2024–25) — a carpooling + peer-to-peer car-rental marketplace across three codebases (Flutter mobile, TypeScript/Express/Prisma backend with a 13-model schema, Next.js admin).
 
 ## Pages
@@ -37,4 +40,5 @@
 ## Contact
 - Email: ayushkashyaptx@gmail.com
 - LinkedIn: https://www.linkedin.com/in/ayushk01
+- GitHub: https://github.com/ayushk01
 - X: https://x.com/ayushhhkk2
